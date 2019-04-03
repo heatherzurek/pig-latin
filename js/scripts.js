@@ -1,26 +1,40 @@
 
+
 function pigLatin(userInput) {
-  if (userInput[0]==="a" || userInput[0] ==="e" || userInput[0]==="i" || userInput[0]==="o" || userInput[0]==="u"){
 
-    userInput += "ay";
-    return userInput;
+  var phrase = userInput.split(" ");
+  console.log(phrase);
+  var output = "";
+  for (var i = 0; i < phrase.length; i++) {
+    var word = phrase[i].split("");
+    if (word[0]==="a" || word[0] ==="e" || word[0]==="i" || word[0]==="o" || word[0]==="u"){
+      output += word.join("") + "ay ";
+    }  else {
+      console.log(word);
+      for (var j = 0; j < word.length; j++ ) {
+        var firstLetter = word.shift();
+        word.push(firstLetter);
+        console.log(word);
+        if (word[0]==="a" || word[0] ==="e" || word[0]==="i" || word[0]==="o" || word[0]==="u"){
+          output += word.join("") + "ay ";
+          break;
+        }
+      }
+    }
 
-}  else {
-    return true;
-  }
-};
+  return output;
 
-
+}
 
 
 
 $(document).ready(function(){
   $("form#pig-latin").submit (function(event){
-    var userInput = $("input#latin").val();
-    var x = pigLatin(userInput);
-    //console.log(userInput);
-    $("#result").text(x);
-
     event.preventDefault();
+    var userInput = $("input#latin").val();
+    var phrase =pigLatin(userInput);
+
+    $("#result").text(phrase);
+
   });
 });
