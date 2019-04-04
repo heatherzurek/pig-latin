@@ -1,1 +1,17 @@
 
+body {
+  background-color: #d693d0;
+  font-family: sans-serif;
+}
+
+.container {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 30px;
+  margin-top: 25%;
+  max-width: 550px;
+}
+
+button {
+  background-color: #edb6e7;
+}
