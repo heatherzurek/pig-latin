@@ -1,7 +1,5 @@
 # _Pig Latin Translator_
 
-#### _{Brief description of application}, {Date of current version}_
-
 #### By _**Heather Zurek and Mustafa Ghasemi**_
 
 ## Description
